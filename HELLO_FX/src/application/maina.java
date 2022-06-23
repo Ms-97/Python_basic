@@ -32,7 +32,7 @@ public class maina extends Application {
 			tf3 = (TextField) scene.lookup("#tf3");
 			tf4 = (TextField) scene.lookup("#tf4");
 			
-			Button btn = (Button) scene.lookup("#배수의합은");
+			Button btn = (Button) scene.lookup("#btn");
 			btn.setOnMouseClicked(new EventHandler<Event>() {
 				@Override
 				public void handle(Event event) {
@@ -53,14 +53,14 @@ public class maina extends Application {
 		int a = Integer.parseInt(tf1.getText());
 		int b = Integer.parseInt(tf2.getText());
 		int c = Integer.parseInt(tf3.getText());
-		String result = "";
+		int result = 0;
 		
 		for(int i=a; i<=b; i++) {
 			if(i%c == 0) {
-				result += (i+" ");
+				result += i;
 			}
 		}
-		tf4.setText(result);
+		tf4.setText(result+"");
 	}
 	
 	
