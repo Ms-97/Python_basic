@@ -29,7 +29,7 @@ print("xi:",s.money)
 print("putin:",s.nuclear)  
 print("JungEun:",s.missile)  
 
-s.steal(300)
+s.steal(400)
 s.alzheimer()
 s.ssorau()
 
