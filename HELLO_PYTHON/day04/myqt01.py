@@ -15,7 +15,7 @@ class WindowClass(QMainWindow, form_class) :
         self.pb.clicked.connect(self.btnClick)
  
     def btnClick(self):
-        self.lbl.setText("GoodEvening")
+        self.lbl.setText("Good Evening")
 
 if __name__ == "__main__" :
     #QApplication : 프로그램을 실행시켜주는 클래스
