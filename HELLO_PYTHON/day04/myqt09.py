@@ -1,6 +1,7 @@
 import sys
 from PyQt5 import uic
 from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt5.Qt import QMessageBox
 
 form_class = uic.loadUiType("myqt09.ui")[0]
 
@@ -26,6 +27,7 @@ class MainClass(QMainWindow, form_class):
         self.pb8.clicked.connect(self.myclick8)
         self.pb9.clicked.connect(self.myclick9)
         self.pb0.clicked.connect(self.myclick0)
+        self.pb_call.clicked.connect(self.myclick_call)
         self.show()
         
     def myclick1(self):
@@ -88,6 +90,10 @@ class MainClass(QMainWindow, form_class):
         
         self.le.setText(num)
     
+    def myclick_call(self): 
+        global num  
+        QMessageBox.information(self, "calling", num)
+        
         
 if __name__ == "__main__" :
     app = QApplication(sys.argv) 
