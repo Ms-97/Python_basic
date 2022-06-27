@@ -29,7 +29,19 @@ class MainClass(QMainWindow, form_class):
         self.pb0.clicked.connect(self.myclick0)
         self.pb_call.clicked.connect(self.myclick_call)
         self.show()
+     
+
+#     def myclick(self):   
+#        str_new = self.sender().text()
+#        str_old = self.le.text()
+#        self.le.setText(str_old+str_new)
         
+#    def mycall(self):   
+#        str_tel = self.le.text()
+#        QMessageBox.question(self, 'calling', str_tel, QMessageBox.Yes, QMessageBox.NoButton)""   
+  
+    
+    
     def myclick1(self):
         global num   
         num += "1"

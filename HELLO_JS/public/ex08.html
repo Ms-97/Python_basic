@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.it{
+	width: 30px;
+}
+</style>
+<script type="text/javascript">
+	function myclick(){
+		var obj1 = document.querySelector("#it_first");
+		var obj2 = document.querySelector("#it_last");
+		var a = parseInt(obj1.value);
+		var b = parseInt(obj2.value);
+		var txt = "";
+		var ret = "";
+		
+		for(var i=0; i<=obj2.value; i++) {
+			ret+="*";	
+			
+		}
+	}	
+		
+		
+		
+	}
+</script>	
+</head>
+<body>
+<table border="1px">
+	<tr>
+		<td>첫별수:</td>
+		<td>
+			<input type="text" class="it" id="it_first" />
+		</td>
+	</tr>
+	<tr>
+		<td>끝별수:</td>
+		<td>
+			<input type="text" class="it" id="it_last" />
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<input type="button" style="width: 100%" value="별출력하기" onclick="myclick()"/>
+		</td>
+	</tr>
+	<tr>
+		<td style="height: 200px;" colspan="2">
+			<div id="mydiv"></div>
+		</td>
+	</tr>	
+	
+	
+</table>
+
+</body>
+</html>

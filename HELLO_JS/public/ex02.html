@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function myclick(){
+	var obj = document.querySelector("#it");
+	var a = parseInt(obj.value);
+	a--;
+	obj.value = a;
+	}
+
+</script>
+</head>
+<body>
+<input type="text" id="it" value="500" />
+<input type="button" value="decrease" onclick="myclick()" />
+
+</body>
+</html>

@@ -11,8 +11,6 @@ class MainClass(QMainWindow, form_class):
         QMainWindow.__init__(self)
         self.setupUi(self)
         self.pb.clicked.connect(self.myclick)
-        self.le1.returnPressed.connect(self.myclick)
-        self.le2.returnPressed.connect(self.myclick)
         self.le3.returnPressed.connect(self.myclick)
         self.show()
         

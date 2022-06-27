@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function myclick(){
+		var objDan = document.querySelector("#it");
+		var	objTd = document.querySelector("#mytd");
+		var num = parseInt(objDan.value);
+		var result = "";
+		
+		result += (num +"*"+ 1 +"="+ (num*1)+"<br>");
+		result += (num +"*"+ 2 +"="+ (num*2)+"<br>");
+		result += (num +"*"+ 3 +"="+ (num*3)+"<br>");
+		result += (num +"*"+ 4 +"="+ (num*4)+"<br>");
+		result += (num +"*"+ 5 +"="+ (num*5)+"<br>");
+		result += (num +"*"+ 6 +"="+ (num*6)+"<br>");
+		result += (num +"*"+ 7 +"="+ (num*7)+"<br>");
+		result += (num +"*"+ 8 +"="+ (num*8)+"<br>");
+		result += (num +"*"+ 9 +"="+ (num*9)+"<br>");
+		
+		objTd.innerHTML = result;
+	}
+
+
+</script>
+<style type="text/css">
+.it{
+	width: 20px;
+}
+</style>
+</head>
+<body>
+<table border="1px">
+	<tr>
+		<td>출력단수</td>
+		<td> 
+			<input type="text" id="it" style="width: 30px" />
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<input type="button" value="출력하기" style="width: 100%" onclick="myclick()"/>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" id="mytd" style="height: 200px">
+			&nbsp;
+		</td>
+	</tr>
+
+</table>
+
+</body>
+</html>
