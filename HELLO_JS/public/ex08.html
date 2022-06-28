@@ -12,20 +12,29 @@
 	function myclick(){
 		var obj1 = document.querySelector("#it_first");
 		var obj2 = document.querySelector("#it_last");
+		var	objr = document.querySelector("#mydiv");
 		var a = parseInt(obj1.value);
 		var b = parseInt(obj2.value);
 		var txt = "";
 		var ret = "";
 		
-		for(var i=0; i<=obj2.value; i++) {
-			ret+="*";	
-			
+		for(var i=a; i<=b; i++) {
+			txt += drawStar(i);
 		}
+		objr.innerHTML = txt;
 	}	
+	
+	function drawStar(cnt){
+		var ret = "";
+		for(var i=0; i<cnt; i++) {
+			ret+="*";	
+		}
+		ret +="<br>";
 		
-		
-		
+		return ret;
 	}
+		
+	
 </script>	
 </head>
 <body>

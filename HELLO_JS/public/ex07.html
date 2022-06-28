@@ -34,13 +34,19 @@
 		   || com == "바위" && mine == "가위"
 		   || com == "보" && mine == "바위"){
 			
-			winner = "com 승리";
+			winner = "짐";
 		}
 		else {
-			winner = "유저 승리";
+			winner = "이김";
 		}
 		objs[1].value = com; 
 		objs[2].value = winner; 
+	}
+	
+	function enterkey() {
+		if (window.event.keyCode == 13) {
+			myclick();
+	    }
 	}
 
 </script>
@@ -50,7 +56,7 @@
 	<tr>
 		<td>나:</td>
 		<td>
-			<input type="text" class="it" id="itMine" />
+			<input type="text" class="it" id="itMine" onkeyup="enterkey(event)" /> 
 		</td>
 	</tr>
 	<tr>
@@ -70,7 +76,7 @@
 		</td>
 
 	</tr>
-
+ 
 </table>
 </body>
 </html>
