@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+input[type=text] {
+width: 20px;
+}
+</style>
+<script>
+function myclick(){
+	var obj1 = document.querySelector("#it_a");
+	var obj2 = document.querySelector("#it_b");
+	var	obj3 = document.querySelector("#it_c");
+	var	objr = document.querySelector("#it_d");
+	var a = parseInt(obj1.value);
+	var b = parseInt(obj2.value);
+	var c = parseInt(obj3.value);
+	
+	var result = 0;
+
+	for(var i=a; i<=b; i++) {
+		if(i%c == 0) {
+			result += i;
+		}
+	}
+	
+	objr.value = result;
+}
+
+function mykey(e){
+	if(e.key=="Enter"){
+		myclick();
+	}
+}
+
+</script>
+</head>
+<body>
+<input type="text" id="it_a" />에서
+<input type="text" id="it_b" />까지
+<input type="text" id="it_c" onkeydown="mykey(event)" />
+<input type="button" value="배수의 합은" onclick="myclick()"/>
+<input type="text" id="it_d" />
+
+</body>
+</html>
