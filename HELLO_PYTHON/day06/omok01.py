@@ -7,14 +7,10 @@ form_class = uic.loadUiType("omok01.ui")[0]
 
 
 class MainClass(QMainWindow, form_class):
-    
-    global num
-    num = 0
-    
     def __init__(self) :
         QMainWindow.__init__(self)
+        self.flagWb = False  #전역변수 flagWb선언
         self.setupUi(self)
-        
         
         for j in range(10):
             for i in range(10):
@@ -27,16 +23,13 @@ class MainClass(QMainWindow, form_class):
         self.show()
         
     def myclick(self):
-        
-        global num
-        if num % 2 == 0:
+        if self.flagWb :
             self.sender().setIcon(QtGui.QIcon('1.png'))
-            num +=1
-        else:
-            self.sender().setIcon(QtGui.QIcon('2.png')) 
-            num +=1   
-        
-         
+        else :
+            self.sender().setIcon(QtGui.QIcon('2.png'))  
+            
+        self.flagWb = not self.flagWb 
+
         
 if __name__ == "__main__" :
     app = QApplication(sys.argv) 
