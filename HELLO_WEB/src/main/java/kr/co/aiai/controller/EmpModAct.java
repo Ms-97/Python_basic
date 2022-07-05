@@ -1,7 +1,6 @@
 package kr.co.aiai.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -14,22 +13,32 @@ import kr.co.aiai.dao.DaoEmp;
 import kr.co.aiai.dao.EmpVO;
 
 
-@WebServlet("/emp_detail")
-public class EmpDetail extends HttpServlet {
+@WebServlet("/emp_mod_act")
+public class EmpModAct extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
 		String e_id = request.getParameter("e_id");
+		String e_name = request.getParameter("e_name");
+		String sex = request.getParameter("sex");
+		String addr = request.getParameter("addr");
+		
+		System.out.println("e_id:"+e_id);
+		System.out.println("e_name:"+e_name);
+		System.out.println("sex:"+sex);
+		System.out.println("addr:"+addr);
 		
 		DaoEmp de = new DaoEmp();
-		EmpVO vo = null;
+		int cnt = -1;
 		try {
-			vo = de.getOne(new EmpVO(e_id,"","",""));
+			cnt = de.update(new EmpVO(e_id, e_name, sex, addr));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		request.setAttribute("emp", vo); 
+		request.setAttribute("cnt", cnt); 
+		System.out.println("cnt:"+cnt);
 		
-		RequestDispatcher rd = request.getRequestDispatcher("/emp_detail.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/emp_mod_act.jsp");
 		rd.forward(request,response);
 	}
 

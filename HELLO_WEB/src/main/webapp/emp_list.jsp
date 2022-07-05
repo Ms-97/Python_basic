@@ -7,6 +7,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript">
+function fn_add(){
+	location.href = "emp_add";	
+}
+
+</script>
 </head>
 <body>
 <%
@@ -30,6 +36,7 @@ ArrayList<EmpVO> list = (ArrayList<EmpVO>)request.getAttribute("b");
 		</tr>
 		<%}%>
 	</table>
+	<input type="button" value="추가" onclick="fn_add()" >
 
 </body>
 </html>

@@ -14,22 +14,13 @@ import kr.co.aiai.dao.DaoEmp;
 import kr.co.aiai.dao.EmpVO;
 
 
-@WebServlet("/emp_detail")
-public class EmpDetail extends HttpServlet {
+@WebServlet("/emp_add")
+public class EmpAdd extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String e_id = request.getParameter("e_id");
 		
-		DaoEmp de = new DaoEmp();
-		EmpVO vo = null;
-		try {
-			vo = de.getOne(new EmpVO(e_id,"","",""));
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		request.setAttribute("emp", vo); 
 		
-		RequestDispatcher rd = request.getRequestDispatcher("/emp_detail.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/emp_add.jsp");
 		rd.forward(request,response);
 	}
 

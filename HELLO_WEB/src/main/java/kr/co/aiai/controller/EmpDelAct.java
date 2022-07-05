@@ -1,7 +1,6 @@
 package kr.co.aiai.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -14,22 +13,25 @@ import kr.co.aiai.dao.DaoEmp;
 import kr.co.aiai.dao.EmpVO;
 
 
-@WebServlet("/emp_detail")
-public class EmpDetail extends HttpServlet {
+@WebServlet("/emp_del_act")
+public class EmpDelAct extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
 		String e_id = request.getParameter("e_id");
 		
+		
 		DaoEmp de = new DaoEmp();
-		EmpVO vo = null;
+		int cnt = -1;
 		try {
-			vo = de.getOne(new EmpVO(e_id,"","",""));
+			cnt = de.delete(new EmpVO(e_id,"","",""));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		request.setAttribute("emp", vo); 
+		request.setAttribute("cnt", cnt); 
+		System.out.println("cnt:"+cnt);
 		
-		RequestDispatcher rd = request.getRequestDispatcher("/emp_detail.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/emp_del_act.jsp");
 		rd.forward(request,response);
 	}
 

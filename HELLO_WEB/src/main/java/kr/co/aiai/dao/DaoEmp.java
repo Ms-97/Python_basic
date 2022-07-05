@@ -84,9 +84,9 @@ public class DaoEmp {
 		
 		String sql = "";
 		sql += "insert into emp ";
-		sql += "(e_id,e_name,sex,addr) ";
+		sql += "(e_name,sex,addr) ";
 		sql += "values ";
-		sql += "('"+vo.getE_id()+"','"+vo.getE_name()+"','"+vo.getSex()+"','"+vo.getAddr()+"')";
+		sql += "('"+vo.getE_name()+"','"+vo.getSex()+"','"+vo.getAddr()+"')";
 
 		int cnt = stmt.executeUpdate(sql);
 
