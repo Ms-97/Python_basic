@@ -89,6 +89,62 @@ function fn_add(){
 	});
 }
 
+function fn_mod(){
+	var param = "";
+	param += "dummy=" + Math.random();
+	param += "&e_name="+$("#e_name").val();
+	param += "&sex="+$("#sex").val();
+	param += "&addr="+$("#addr").val();
+	param += "&e_id="+$("#e_id").val();
+	
+	$.ajax({
+		url : "ajaxmod",
+		data : param,
+		dataType : "json",
+		type : "post",
+		async: false,
+		success : function(res) {
+			var cnt = res.cnt;
+			if(cnt ==1){
+				alert("정상적으로 수정하였습니다.");
+				fn_list();
+				$("#e_id").val("");
+				$("#e_name").val("");
+				$("#sex").val("");
+				$("#addr").val("");
+			}
+			console.log(res.cnt);
+		}
+	});
+}
+
+
+function fn_del(){
+	var param = "";
+	param += "dummy=" + Math.random();
+	param += "&e_id="+$("#e_id").val();
+	$.ajax({
+		url : "ajaxdel",
+		data : param,
+		dataType : "json",
+		type : "post",
+		async: false,
+		success : function(res) {
+			var cnt = res.cnt;
+			if(cnt ==1){
+				alert("정상적으로 삭제되었습니다.");
+				fn_list();
+				$("#e_id").val("");
+				$("#e_name").val("");
+				$("#sex").val("");
+				$("#addr").val("");
+			}
+			console.log(res.cnt);
+		}
+	});
+
+}
+
 </script>
 </head>
 <body onload="fn_list()">
@@ -139,8 +195,8 @@ function fn_add(){
 	<tr>
 		<td colspan="2">
 			<input type="button" value="추가" onclick="fn_add()" />
-			<input type="button" value="수정" />
-			<input type="button" value="삭제" />
+			<input type="button" value="수정" onclick="fn_mod()" />
+			<input type="button" value="삭제" onclick="fn_del()" />
 		</td>
 	</tr>
 	
