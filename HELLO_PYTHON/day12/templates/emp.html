@@ -1,5 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -52,6 +50,7 @@ function fn_one(e_id){
 		type : "post",
 		async: false,
 		success : function(res) {
+			console.log(res);
 			var emp = res;
 			$("#e_id").val(emp.e_id);
 			$("#e_name").val(emp.e_name);
@@ -148,7 +147,7 @@ function fn_del(){
 
 </script>
 </head>
-<body onload="fn_list()">
+<body onload="fn_list()" >
 <table border="1px">
 	<thead>
 		<tr>
@@ -167,6 +166,7 @@ function fn_del(){
 		</tr>
 	</tbody>
 </table>
+
 
 <table border="1px">
 	<tr>
@@ -202,9 +202,6 @@ function fn_del(){
 	</tr>
 	
 </table>
-
-
-
 
 </body>
 </html>
