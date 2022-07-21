@@ -11,7 +11,7 @@ import org.opencv.videoio.Videoio;
 
 class BackgroundSubtraction {
     public void run(String[] args) {
-        String input = args.length > 0 ? args[0] : "../data/vtest.avi";
+        String input = args.length > 0 ? args[0] : "data/vtest.avi";
         boolean useMOG2 = args.length > 1 ? args[1] == "MOG2" : true;
 
         //! [create]
