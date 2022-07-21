@@ -8,6 +8,6 @@ import cv2
 # MNIST 데이터셋 불러오기
 (train_images, train_labels), (test_images, test_labels) = mnist.load_data()
 
-
+ 
 for idx,img in enumerate(train_images):
     cv2.imwrite('train/'+str(idx)+'.jpg', train_images[idx])

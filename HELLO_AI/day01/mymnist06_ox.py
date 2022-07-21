@@ -8,7 +8,7 @@ from keras.utils import to_categorical
 # MNIST 데이터셋 불러오기
 (train_images, train_labels), (test_images, test_labels) = mnist.load_data()
 
-print(train_labels[0])
+g_train_labels = train_labels
  
 # 이미지 데이터 준비하기 (모델에 맞는 크기로 바꾸고 0과 1사이로 스케일링)
 train_images = train_images.reshape((60000, 28 * 28))
@@ -31,10 +31,29 @@ model.compile(optimizer='rmsprop',
                 metrics=['accuracy'])
                                         
 # fit() 메서드로 모델 훈련 시키기
-model.fit(train_images, train_labels, epochs=5, batch_size=128)
+model.fit(train_images, train_labels, epochs=10, batch_size=128)
+test_loss, test_acc = model.evaluate(test_images, test_labels) 
+print('test_acc', test_acc)
  
 predicted_result = model.predict(train_images)
 
+cnt_o = 0
+cnt_x = 0
 
-ai_answer = np.argmax(predicted_result[0])
-print("ai_answer",ai_answer)
+for i in range(60000):
+    go_label = g_train_labels[i]
+    ai_label = np.argmax(predicted_result[i])
+    if go_label == ai_label:
+        cnt_o+=1
+    else:
+        cnt_x+=1  
+        
+#for idx,i in enumerate(g_train_labels):
+#    if g_train_labels[idx] == np.argmax(predicted_result[idx]):
+#        cnt_o+=1
+#    else:
+#        cnt_x+=1   
+
+
+print("cnt_o ",cnt_o/60000)
+print("cnt_x ",cnt_x/60000)

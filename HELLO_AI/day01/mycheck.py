@@ -19,7 +19,7 @@ import tensorflow
 import keras
 import cv2
 
-
+  
 print('scipy ' + scipy.__version__)
 print('numpy ' + numpy.__version__)
 print('matplotlib ' + matplotlib.__version__)

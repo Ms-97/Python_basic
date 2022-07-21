@@ -14,7 +14,7 @@ test_images = test_images.reshape((10000, 28 * 28))
 test_images = test_images.astype('float32') / 255
  
 print("train_Labels",train_labels[1])
-
+ 
 train_labels = to_categorical(train_labels)
 test_labels = to_categorical(test_labels)
 

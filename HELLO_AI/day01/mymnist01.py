@@ -15,8 +15,8 @@ print('test_images ', test_images.shape)
 print('test_labels ', test_labels.shape)
 
 print("train_labels[0]",test_labels[1])
-    
-     for row in test_images[1]:
+     
+    for row in test_images[1]:
         for d in row:
             print(d,end="\t")
             print() 
