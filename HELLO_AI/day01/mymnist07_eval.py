@@ -8,7 +8,7 @@ import cv2
   
 # MNIST 데이터셋 불러오기
 (train_images, train_labels), (test_images, test_labels) = mnist.load_data()
-
+g_train_images = train_images
 g_train_labels = train_labels
  
 # 이미지 데이터 준비하기 (모델에 맞는 크기로 바꾸고 0과 1사이로 스케일링)
@@ -45,8 +45,8 @@ for i in range(60000):
     go_label = g_train_labels[i]
     ai_label = np.argmax(predicted_result[i])
     if go_label == ai_label:
-        cv2.imwrite('test/o/'+str(go_label)+'_'+str(ai_label)+'_'+str(i)+'.png', train_images[i])
+        cv2.imwrite('test/o/'+str(go_label)+'_'+str(ai_label)+'_'+str(i)+'.png', g_train_images[i])
     else:
-        cv2.imwrite('test/x/'+str(go_label)+'_'+str(ai_label)+'_'+str(i)+'.png', train_images[i]) 
+        cv2.imwrite('test/x/'+str(go_label)+'_'+str(ai_label)+'_'+str(i)+'.png', g_train_images[i])  
           
 
