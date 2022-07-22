@@ -46,7 +46,6 @@ for i in range(60000):
     ai_label = np.argmax(predicted_result[i])
     if go_label == ai_label:
         cv2.imwrite('test/o/'+str(go_label)+'_'+str(ai_label)+'_'+str(i)+'.png', g_train_images[i])
+        #cv2.imwrite("test/o/{}_{}_{}.jpg".format(go_label,ai_label,i),g_train_images[i])
     else:
         cv2.imwrite('test/x/'+str(go_label)+'_'+str(ai_label)+'_'+str(i)+'.png', g_train_images[i])  
-          
-
