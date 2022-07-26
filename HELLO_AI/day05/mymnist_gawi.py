@@ -4,17 +4,17 @@ from keras import layers
 from keras.utils import to_categorical
 import numpy as np
 train_images_a = [
-     [1,0,0,1,0,0],
-     [1,0,0,0,1,0],
-     [1,0,0,0,0,1],
+    [0,     0],
+    [0,   0.5],
+    [0,     1],
      
-     [0,1,0,1,0,0],
-     [0,1,0,0,1,0], 
-     [0,1,0,0,0,1],
-     
-     [0,0,1,1,0,0],
-     [0,0,1,0,1,0],
-     [0,0,1,0,0,1]
+    [0.5,   0],
+    [0.5, 0.5],
+    [0.5,   1],
+    
+    [1,     0],
+    [1,   0.5],
+    [1,     1]
 ]
  
 train_labels_a = [
@@ -28,14 +28,15 @@ train_labels_c = to_categorical(train_labels)
 print("train_labels_c",train_labels_c)
  
 model = models.Sequential()
-model.add(layers.Dense(512, activation='relu', input_shape=(6,)))
+model.add(layers.Dense(512, activation='relu', input_shape=(2,)))
+model.add(layers.Dense(512, activation='relu'))
 model.add(layers.Dense(3, activation='softmax'))
  
 model.compile(optimizer='rmsprop',
                 loss='categorical_crossentropy',
                 metrics=['accuracy'])
  
-model.fit(train_images, train_labels_c, epochs=20, batch_size=6)
+model.fit(train_images, train_labels_c, epochs=100, batch_size=2)
 
 
 predict_result = model.predict(train_images)
