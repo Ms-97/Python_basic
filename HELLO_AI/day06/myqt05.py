@@ -2,7 +2,7 @@ import sys
 from PyQt5 import uic
 from PyQt5.QtWidgets import QApplication, QMainWindow
 from random import random
-from day06.mymnist_holl_load import hky, HerKY
+from day06.mymnist_holl_load_class import HerKY
 
 form_class = uic.loadUiType("myqt05.ui")[0]
 
