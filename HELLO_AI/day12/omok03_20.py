@@ -13,6 +13,9 @@ form_class = uic.loadUiType("omok03.ui")[0]
 class MainClass(QMainWindow, form_class):
     def __init__(self) :
         QMainWindow.__init__(self)
+        self.arr_i = [0,0,0,0,0]
+        self.arr_j = [0,1,2,3,4]
+        self.idx_g = 0
         self.flagWb = True
         self.flagIng = True
         self.arr2D = np.zeros((20,20))
@@ -31,13 +34,23 @@ class MainClass(QMainWindow, form_class):
             self.pb2D.append(line)
                 
         self.myrender()
-        self.pbReset.clicked.connect(self.myreset)
+        self.pbReset.clicked.connect(self.myrgibo)
         
         self.show()
         
-    def myreset(self):
-        pass
+    def myrgibo(self):
+        i = self.arr_i[self.idx_g]
+        j = self.arr_j[self.idx_g]
         
+        if self.flagWb:
+            self.arr2D[i][j] = 1   
+        else:
+            self.arr2D[i][j] = 2  
+             
+        self.myrender()
+        
+        self.idx_g += 1
+        self.flagWb = not self.flagWb
         
     def myrender(self):
         for i in range(20):
