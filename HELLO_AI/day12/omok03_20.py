@@ -34,23 +34,23 @@ class MainClass(QMainWindow, form_class):
             self.pb2D.append(line)
                 
         self.myrender()
-        self.pbReset.clicked.connect(self.myrgibo)
+        self.pbReset.clicked.connect(self.mygibo)
         
         self.show()
         
-    def myrgibo(self):
+    def mygibo(self):
         i = self.arr_i[self.idx_g]
         j = self.arr_j[self.idx_g]
-        
-        if self.flagWb:
-            self.arr2D[i][j] = 1   
-        else:
-            self.arr2D[i][j] = 2  
-             
+        if self.flagWb :   
+            self.arr2D[i][j] = 1
+        else :
+            self.arr2D[i][j] = 2
+
         self.myrender()
         
         self.idx_g += 1
         self.flagWb = not self.flagWb
+        
         
     def myrender(self):
         for i in range(20):

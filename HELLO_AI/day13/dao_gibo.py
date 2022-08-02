@@ -45,8 +45,6 @@ class DaoGibo:
         # gibo_ais_pp.append(line_trash)
         #
         # anss.append(399)
-        #
-
         
         gibo_ais_pp_n =  np.array(gibo_ais_pp)
         anss_n = np.array(anss)

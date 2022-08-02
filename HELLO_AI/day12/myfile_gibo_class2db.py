@@ -22,11 +22,13 @@ class RaoGibo:
     def insert_db(self):
         mymax = self.dg.getPanMax()
         cnt = self.dg.insert(mymax, self.win, self.gibo, self.gibo_ai, self.ans)
-        print("cnt=",cnt)
+        print("cnt",cnt)
         
-        
+
     def getGibo(self):
         file_name = "0_0_1_2.psq"
+        # file_name = "0_0_1_2.psq"
+        
         arr_i =[]
         arr_j =[]
         f = open(file_name, 'r')

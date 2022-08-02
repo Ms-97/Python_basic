@@ -16,7 +16,7 @@ class MainClass(QMainWindow, form_class):
         QMainWindow.__init__(self)
         rg = RaoGibo()
         self.arr_i,self.arr_j=rg.getGibo("0_0_1_2.psq")
-        
+
         self.idx_g = 0
         self.flagWb = True
         self.flagIng = True
@@ -36,24 +36,24 @@ class MainClass(QMainWindow, form_class):
             self.pb2D.append(line)
                 
         self.myrender()
-        self.pbReset.clicked.connect(self.myrgibo)
+        self.pbReset.clicked.connect(self.mygibo)
         
         self.show()
         
-    def myrgibo(self):
+    def mygibo(self):
         print(len(self.arr_i),self.idx_g)
         if len(self.arr_i) <= self.idx_g:
             return
-
-            
+        
         i = self.arr_i[self.idx_g]
         j = self.arr_j[self.idx_g]
-        
-        if self.flagWb:
-            self.arr2D[i][j] = 1   
-        else:
-            self.arr2D[i][j] = 2  
-             
+        if self.flagWb :   
+            self.arr2D[i][j] = 1
+        else :
+            self.arr2D[i][j] = 2
+            
+            
+
         self.myrender()
         self.idx_g += 1
         
@@ -64,6 +64,7 @@ class MainClass(QMainWindow, form_class):
                 QMessageBox.question(self, '오목', "흑돌승리", QMessageBox.Yes, QMessageBox.NoButton)
         
         self.flagWb = not self.flagWb
+        
         
     def myrender(self):
         for i in range(20):

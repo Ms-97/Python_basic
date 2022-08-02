@@ -4,11 +4,10 @@ from keras import layers
 from keras.utils import to_categorical
 import numpy as np
 
-train_images = np.load("omok_train.npy")
-train_labels = np.load("omok_answer.npy")
+train_images = np.load("omok_train2.npy")
+train_labels = np.load("omok_answer2.npy")
 
-
-train_labels_c = to_categorical(train_labels)
+train_labels_c = to_categorical(train_labels,num_classes=400)
 print("train_labels_c",train_labels_c)
 
 model = models.Sequential()
@@ -22,9 +21,10 @@ model.compile(optimizer='rmsprop',
                 metrics=['accuracy'])
 
 
-model.fit(train_images[0:9], train_labels_c[0:9], epochs=20)
+model.fit(train_images, train_labels_c, epochs=20)
+model.save('alphao.h5')
 
-predict_result = model.predict(train_images[0:9])
+predict_result = model.predict(train_images)
 print("predict_result",predict_result)
 for r in predict_result:
     ai_answer = np.argmax(r)

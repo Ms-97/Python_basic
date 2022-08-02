@@ -3,13 +3,11 @@ lines = f.readlines()
 for line in lines:
     arr_split = line.split(",")
     mylen = len(arr_split)
-    if mylen == 3: 
+    if mylen == 3:
         try:
             i = int(arr_split[0])
             j = int(arr_split[1])
             print(i,j)
         except:
-            print()
-            
+            print("error")
 f.close()
-
