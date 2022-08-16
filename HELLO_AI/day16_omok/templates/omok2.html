@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="jquery-3.6.0.min.js"></script>
+<style>
+table{
+ border-collapse:collapse;
+}
+
+ .a {
+        background-image: url( "0.png" );
+        width: 40px;
+        height: 40px;
+        margin: 0;
+      }
+</style>
+<script>
+	var flagWb = true;
+function myclick(obj){
+	if (flagWb){
+		obj.style.backgroundImage="url(1.png)";
+		flagWb = false;
+	}else if (!flagWb){
+		obj.style.backgroundImage="url(2.png)";
+		flagWb = true;
+	}
+	
+}
+</script>
+</head>
+<body >
+<table>
+	<tr>
+		<td class="a" onclick="myclick(this)"></td>
+		<td class="a" onclick="myclick(this)"></td>
+		<td class="a" onclick="myclick(this)"></td>
+		<td class="a" onclick="myclick(this)"></td>
+		<td class="a" onclick="myclick(this)"></td>
+		<td class="a" onclick="myclick(this)"></td>
+		<td class="a" onclick="myclick(this)"></td>
+		<td class="a" onclick="myclick(this)"></td>
+		<td class="a" onclick="myclick(this)"></td>
+		<td class="a" onclick="myclick(this)"></td>
+		
+	</tr>
+	<tr>
+		<td class="a" onclick="myclick(this)"></td>
+		<td class="a" onclick="myclick(this)"></td>
+		<td class="a" onclick="myclick(this)"></td>
+		<td class="a" onclick="myclick(this)"></td>
+		<td class="a" onclick="myclick(this)"></td>
+		<td class="a" onclick="myclick(this)"></td>
+		<td class="a" onclick="myclick(this)"></td>
+		<td class="a" onclick="myclick(this)"></td>
+		<td class="a" onclick="myclick(this)"></td>
+		<td class="a" onclick="myclick(this)"></td>
+	</tr>
+	
+
+
+</table>
+
+</body>
+</html>
