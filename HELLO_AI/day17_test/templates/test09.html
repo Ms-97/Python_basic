@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+function myclick(e){
+	var str_new = e.target.value;
+	var str_old = document.querySelector("#text").value;
+	document.querySelector("#text").value = str_old + str_new;
+}
+
+function mycall(){
+	var str_tel = document.querySelector("#text").value;
+	alert("calling\n"+str_tel);
+}
+
+
+</script>
+
+
+
+</head>
+<body>
+	<table border= "1px">
+	<tr>
+		<td colspan="3">
+			<input type="text" style="width:120px" value="" onclick="myclick()"/>
+		</td>
+	</tr>
+		
+	<tr>
+		<td>
+			<input type="button" style="width:40px" value="1" onclick="myclick(event)"/>
+		</td>
+		<td>
+			<input type="button" style="width:40px" value="2" onclick="myclick(event)"/>
+		</td>
+		<td>
+			<input type="button" style="width:40px" value="3" onclick="myclick()"/>
+		</td>
+	</tr>		
+	<tr>
+		<td>
+			<input type="button" style="width:40px" value="4" onclick="myclick()"/>
+		</td>
+		<td>
+			<input type="button" style="width:40px" value="5" onclick="myclick()"/>
+		</td>
+		<td>
+			<input type="button" style="width:40px" value="6" onclick="myclick()"/>
+		</td>
+	</tr>		
+	<tr>
+		<td>
+			<input type="button" style="width:40px" value="7" onclick="myclick()"/>
+		</td>
+		<td>
+			<input type="button" style="width:40px" value="8" onclick="myclick()"/>
+		</td>
+		<td>
+			<input type="button" style="width:40px" value="9" onclick="myclick()"/>
+		</td>
+	</tr>		
+	<tr>
+		<td>
+			<input type="button" style="width:40px" value="0" onclick="myclick()"/>
+		</td>
+		<td>
+			<input type="button" style="width:40px" value="call" onclick="mycall()"/>
+		</td>
+
+	</tr>		
+	
+	</table>
+
+</body>
+</html>

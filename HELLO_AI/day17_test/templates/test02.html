@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="jquery-3.6.0.min.js"></script>
+
+<script>
+function myclick(){
+	var obj = document.getElementById("mytxt");
+	
+	var a = obj.value;
+	
+	var aa = parseInt(a)*2;
+	
+	obj.value = aa;
+
+
+}
+</script>
+
+
+</head>
+<body>
+<input type="text" id="mytxt" value="100"/>
+<input type="button" value="click" onclick= "myclick()"/>
+
+
+
+</body>
+</html>

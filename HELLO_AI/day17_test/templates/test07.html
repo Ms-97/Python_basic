@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="jquery-3.6.0.min.js"></script>
+
+<script>
+function myclick(){
+	var firstr = document.querySelector("input[name='radioF']:checked");
+	var lststr = document.querySelector("input[name='radioL']:checked");
+	var myta = document.getElementById("myta");
+	
+	var a = parseInt(firstr.value);
+	var b = parseInt(lststr.value);
+	var txt = "";
+	var ret = "";
+	
+	for(var i=a; i<=b; i++) {
+		txt += drawStar(i);
+	}
+	myta.innerHTML = txt;
+}	
+
+function drawStar(cnt){
+	var ret = "";
+	for(var i=0; i<cnt; i++) {
+		ret+="*";	
+	}
+	ret +="\n";
+	
+	return ret;
+}
+	 
+
+</script>
+
+
+</head>
+<body>
+<table border="1px">
+	<tr>
+		<td>첫별수:</td>
+		<td>
+			<input type="radio" value="2" name="radioF">2
+			<input type="radio" value="3" name="radioF">3
+			<input type="radio" value="4" name="radioF">4
+			<input type="radio" value="5" name="radioF">5
+		</td>
+	</tr>
+	
+	<tr>
+		<td>끝별수:</td>
+		<td>
+			<input type="radio" value="6" name="radioL">6
+			<input type="radio" value="7" name="radioL">7
+			<input type="radio" value="8" name="radioL">8
+			<input type="radio" value="9" name="radioL">9
+		</td>
+	</tr>
+	
+	<tr>
+		<td colspan="2">
+			<input type="button" value="출력하기"  onclick= "myclick()"/>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<textarea id="myta" rows="10" cols="10"></textarea>
+		</td>
+	</tr>
+		
+</table>
+
+
+</body>
+</html>
