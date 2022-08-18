@@ -7,16 +7,24 @@
 
 <script>
 function myclick(obj) {
-   var str_new=obj.value;
-   var str_old=document.querySelector("#mytxt").value;
+   var str_new= $(obj).val();
+   var str_old=$("#mytxt").val();
    
-   document.querySelector("#mytxt").value=str_old + str_new;
+   $("#mytxt").val(str_old + str_new);
 
 }
 function mycall(){
-   var str_tel = document.querySelector("#mytxt").value;
+   var str_tel = $("#mytxt").val();
    alert("calling...\n " + str_tel)
 }
+
+$(document).ready(function(){	
+	   $("#btnCall").bind("click" , mycall);
+	   $( ".btnNum" ).bind( "click", function( event ) {
+        myclick(this);
+     });
+	});	
+
    </script>
 </head>
 <body>
@@ -28,33 +36,33 @@ function mycall(){
 
       <tr>
          <td><input type="button" style="width: 40px" value="1"
-            onclick="myclick(this)"></td>
+           class="btnNum"></td>
          <td><input type="button" style="width: 40px" value="2"
-            onclick="myclick(this)"></td>
+            class="btnNum"></td>
          <td><input type="button" style="width: 40px" value="3"
-            onclick="myclick(this)"></td>
+            class="btnNum"></td>
       </tr>
       <tr>
          <td><input type="button" style="width: 40px" value="4"
-            onclick="myclick(this)"></td>
+            class="btnNum"></td>
          <td><input type="button" style="width: 40px" value="5"
-            onclick="myclick(this)"></td>
+            class="btnNum"></td>
          <td><input type="button" style="width: 40px" value="6"
-            onclick="myclick(this)"></td>
+            class="btnNum"></td>
       </tr>
       <tr>
          <td><input type="button" style="width: 40px" value="7"
-            onclick="myclick(this)"></td>
+            class="btnNum"></td>
          <td><input type="button" style="width: 40px" value="8"
-            onclick="myclick(this)"></td>
+             class="btnNum"></td>
          <td><input type="button" style="width: 40px" value="9"
-            onclick="myclick(this)"></td>
+            class="btnNum"></td>
       </tr>
       <tr>
          <td><input type="button" style="width: 40px" value="0"
-            onclick="myclick(this)"></td>
+            class="btnNum"></td>
          <td colspan="2"><input type="button" style="width: 85px"
-            value="call" onclick="mycall()"></td>
+            value="call" id="btnCall"></td>
       </tr>
 
 
