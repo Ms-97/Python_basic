@@ -6,6 +6,6 @@
 **/test/
 **/dataset/
 **/Freestyle2/
-**/day23face/movie/
-**/day23face/train_image/
-**/day23face/test_image/
+**/movie/
+**/train_image/
+**/test_image/
