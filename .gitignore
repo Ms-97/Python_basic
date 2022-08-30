@@ -1,6 +1,8 @@
 /.metadata/
 
 **.npy
+**.jpg
+**.png
 
 **/train/
 **/test/
