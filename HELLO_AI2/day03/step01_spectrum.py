@@ -2,6 +2,7 @@ import librosa
 import librosa.display
 import matplotlib.pyplot as plt
 import numpy as np
+import os
 
 labels = ["곽금규",
           "곽동석",
@@ -31,16 +32,11 @@ labels = ["곽금규",
           "한재웅",
           "한태훈"
           ]
-ganada =["가",
-           "나",
-           "다",
-           "라",
-           "마"
-           ]
+
 def cutMute(arr_n):
     idx_f = 0
     while True:
-        if arr_n[idx_f]<0.009:
+        if arr_n[idx_f]<0.003:
             pass
         else:
             break
@@ -51,7 +47,7 @@ def cutMute(arr_n):
     
     idx_l = len(arr_n)-1
     while True:
-        if arr_n[idx_l]<0.009:
+        if arr_n[idx_l]<0.003:
             pass
         else:
             break
@@ -61,25 +57,26 @@ def cutMute(arr_n):
     
     return arr_n[idx_f:idx_l]
 
-for label in labels:
-    print(label,end=' ')
-    for han in ganada:
-        print()
-        print(han,end=' ')
-        for idx in range(4):
-            print(idx+1,end=' ')
-            y, sr = librosa.load("record/{}{}{}.mp3".format(label, han, idx+1))
-            
-            y_trim = cutMute(y)
-            
-            t = np.arange(0, len(y_trim))
-            # print(sr)
-            # print(y_trim)
-            
-            plt.specgram(y_trim)
-            plt.savefig("spectrum/{}{}{}.png".format(label, han, idx+1))
-            plt.title('Spectrogram Using matplotlib.pyplot.specgram() method')  
-            # plt.show() 
-    print()
+
+files = os.listdir("record")
+for f in files:
+
+    png_f = f.replace("mp3","png")
+
+
+    y, sr = librosa.load(f"record/{f}")
+    y_trim = cutMute(y)
+    
+    t = np.arange(0, len(y_trim))
+    print(sr)
+    print(y_trim)
+    
+    plt.specgram(y_trim)
+    plt.savefig(f"spectrum/{png_f}")
+    plt.title('Spectrogram Using matplotlib.pyplot.specgram() method')  
+    #plt.show() 
+
+
+
 
 
