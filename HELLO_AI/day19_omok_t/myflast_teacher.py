@@ -6,6 +6,7 @@ from flask.json import jsonify
 
 app = Flask(__name__,static_url_path='')
 
+
 @app.route('/test')
 def test():
     return render_template('test.html')
@@ -13,9 +14,16 @@ def test():
 @app.route('/')
 @app.route('/omok')
 def omok():
-    return render_template('omok4_20_teacher.html')
+    return render_template('omok4_20_teacher_ai.html')
 
 
 if __name__ == '__main__':
-    app.run(debug=True ,host="0.0.0.0")
+    app.run(debug=True,host="0.0.0.0")
+    
+    
+    
+    
+    
+    
+    
     
